@@ -1,0 +1,22 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance3d5876a2e98b4569931758d52012d10f" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>SQLBasedGroupDemo.Team2GroupDiscovery</Id>
+        <DisplayName>New Discovery</DisplayName>
+        <Description>Description for the new discovery.</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;IntervalSeconds&gt;3600&lt;/IntervalSeconds&gt;&lt;SyncTime&gt;&lt;/SyncTime&gt;&lt;ScriptName&gt;Team2GroupDiscovery.ps1&lt;/ScriptName&gt;&lt;ScriptBody&gt;$IncludeFileContent/Team2GroupDiscovery.ps1$&lt;/ScriptBody&gt;&lt;Parameters&gt;&lt;Parameter&gt;&lt;Name&gt;sourceID&lt;/Name&gt;&lt;Value&gt;$MPElement$&lt;/Value&gt;&lt;/Parameter&gt;&lt;Parameter&gt;&lt;Name&gt;managedEntityID&lt;/Name&gt;&lt;Value&gt;$Target/Id$&lt;/Value&gt;&lt;/Parameter&gt;&lt;/Parameters&gt;&lt;TimeoutSeconds&gt;120&lt;/TimeoutSeconds&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.TimedPowerShell.DiscoveryProvider</DataSourceType>
+        <Target>SC!Microsoft.SystemCenter.AllManagementServersPool</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships />
+      </DiscoveryConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

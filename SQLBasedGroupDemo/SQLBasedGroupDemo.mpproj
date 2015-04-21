@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{1fe1b521-5f5f-40be-a3b7-33f8323a4163}</ProjectGuid>
+    <RootNamespace>SQLBasedGroupDemo</RootNamespace>
+    <Name>SQL Based Group Population Demo MP</Name>
+    <ManagementPackName>SQLBasedGroupDemo</ManagementPackName>
+    <Version>1.0.0.0</Version>
+    <MpFrameworkVersion>v7.0.2</MpFrameworkVersion>
+    <MpFrameworkProfile>OM</MpFrameworkProfile>
+    <ProductVersion>1.1.0.0</ProductVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <GenerateSealed>false</GenerateSealed>
+    <Company>MyCompany</Company>
+    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
+    <DelaySigning>false</DelaySigning>
+    <AssemblyOriginatorKeyFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DelaySigning>false</DelaySigning>
+    <Company>MyCompany</Company>
+    <Copyright>Copyright (c) MyCompany. All rights reserved.</Copyright>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Library">
+      <Alias>SC</Alias>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.Windows.Library">
+      <Alias>Windows</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Health.Library">
+      <Alias>Health</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="System.Library">
+      <Alias>System</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.Visualization.Library">
+      <Alias>Visualization</Alias>
+      <PackageToBundle>false</PackageToBundle>
+    </ManagementPackReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes" />
+    <Folder Include="Discoveries" />
+    <Folder Include="Relationships" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Team1Group.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Team2Group.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Team3Group.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discoveries\Team1GroupDiscovery.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>Discoveries\Team1GroupDiscovery.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="Discoveries\Team2GroupDiscovery.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>Discoveries\Team2GroupDiscovery.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="Relationships\Team1GroupContainsWindowsComputers.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Relationships\Team2GroupContainsWindowsComputers.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Relationships\Team3GroupContainsWindowsComputers.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Discoveries\Team1GroupDiscovery.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="Discoveries\Team2GroupDiscovery.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Team1GroupDiscovery.vbs" />
+    <EmbeddedResource Include="Team2GroupDiscovery.ps1" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
+</Project>

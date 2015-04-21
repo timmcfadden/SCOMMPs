@@ -1,0 +1,27 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        
+
+        <ClassType ID="SQLBasedGroupDemo.Team2Group" Base="System!System.Group" Accessibility="Internal" Abstract="false" Hosted="false" Singleton="true">
+          
+        </ClassType>
+      
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        
+
+        <DisplayString ElementID="SQLBasedGroupDemo.Team2Group">
+          <Name>Team 2 Servers Group</Name>
+          <Description></Description>
+        </DisplayString>
+
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>

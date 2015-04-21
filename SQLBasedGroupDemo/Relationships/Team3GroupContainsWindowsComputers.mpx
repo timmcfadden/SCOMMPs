@@ -1,0 +1,28 @@
+﻿<ManagementPackFragment SchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TypeDefinitions>
+    <EntityTypes>
+      <RelationshipTypes>
+
+
+        <RelationshipType ID="SQLBasedGroupDemo.Team3GroupContainsWindowsComputers" Base="System!System.Containment" Abstract="false" Accessibility="Internal">
+          <Source ID="Source" Type="SQLBasedGroupDemo.Team3Group"/>
+          <Target ID="Target" Type="Windows!Microsoft.Windows.Computer"/>
+        </RelationshipType>
+        
+      </RelationshipTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+
+   
+        <DisplayString ElementID="SQLBasedGroupDemo.Team3GroupContainsWindowsComputers">
+          <Name>Team 3 SQL Based Group Contains Windows Computers</Name>
+          <Description></Description>
+        </DisplayString>
+
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPackFragment>
